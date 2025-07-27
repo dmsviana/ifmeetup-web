@@ -12,13 +12,11 @@ const LoginForm = ({ onSubmit, isLoading, error, initialData, onDataChange }) =>
   const [fieldFocus, setFieldFocus] = useState({});
   const [announceMessage, setAnnounceMessage] = useState('');
 
-  // Animation entrance effect
   useEffect(() => {
     setIsVisible(true);
     setAnnounceMessage('Formulário de login carregado. Preencha seus dados para acessar o sistema.');
   }, []);
 
-  // Announce validation errors to screen readers
   useEffect(() => {
     const errorMessages = Object.values(validationErrors).filter(Boolean);
     if (errorMessages.length > 0) {
@@ -26,14 +24,12 @@ const LoginForm = ({ onSubmit, isLoading, error, initialData, onDataChange }) =>
     }
   }, [validationErrors]);
 
-  // Announce authentication errors to screen readers
   useEffect(() => {
     if (error) {
       setAnnounceMessage(`Erro de autenticação: ${error}`);
     }
   }, [error]);
 
-  // Update form data when initialData changes (login type switching)
   useEffect(() => {
     if (initialData) {
       setFormData({
@@ -42,9 +38,6 @@ const LoginForm = ({ onSubmit, isLoading, error, initialData, onDataChange }) =>
       });
     }
   }, [initialData]);
-
-  // REMOVIDO o useEffect problemático que causava o loop infinito
-  // Agora a notificação ao parent é feita diretamente no handleChange
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,8 +56,6 @@ const LoginForm = ({ onSubmit, isLoading, error, initialData, onDataChange }) =>
       }));
     }
 
-    // Notificar parent apenas se a função existir e quando necessário
-    // Isso evita o loop infinito pois é event-driven, não effect-driven
     if (onDataChange && typeof onDataChange === 'function') {
       onDataChange(newFormData);
     }
