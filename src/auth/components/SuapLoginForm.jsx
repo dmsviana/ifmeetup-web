@@ -31,8 +31,8 @@ const SuapLoginForm = ({ onSubmit, isLoading, error, initialData, onDataChange }
     
     if (name === 'username') {
       processedValue = formatMatricula(value);
-      if (processedValue.length > 12) {
-        processedValue = processedValue.slice(0, 12);
+      if (processedValue.length > 15) {
+        processedValue = processedValue.slice(0, 15);
       }
     }
     
