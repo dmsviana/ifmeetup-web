@@ -10,7 +10,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { login, loginWithSuap, isAuthenticated, isLoading: authLoading, clearError } = useAuth();
-  
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [loginType, setLoginType] = useState(() => {
@@ -30,7 +30,7 @@ const LoginPage = () => {
   // redirecionar se já estiver autenticado
   useEffect(() => {
     if (isAuthenticated && !authLoading) {
-      const from = location.state?.from?.pathname || '/rooms';
+      const from = location.state?.from?.pathname || '/home';
       navigate(from, { replace: true });
     }
   }, [isAuthenticated, authLoading, navigate, location.state]);
@@ -44,10 +44,10 @@ const LoginPage = () => {
   const handleToggleLoginType = (type) => {
     // Não permitir troca durante loading
     if (isLoading) return;
-    
+
     setLoginType(type);
     setError(null); // limpar erros ao trocar tipo
-    
+
     // Salvar preferência no localStorage para próximas visitas
     try {
       localStorage.setItem('ifmeetup_preferred_login_type', type);
@@ -85,10 +85,10 @@ const LoginPage = () => {
       // escolher método de login baseado no tipo
       const loginMethod = loginType === 'suap' ? loginWithSuap : login;
       const result = await loginMethod(credentials);
-      
+
       if (result.success) {
         // login bem-sucedido - navegação será tratada pelo useEffect
-        const from = location.state?.from?.pathname || '/rooms';
+        const from = location.state?.from?.pathname || '/home';
         navigate(from, { replace: true });
       } else {
         // tratamento específico de erro baseado no tipo de login
@@ -108,7 +108,7 @@ const LoginPage = () => {
       }
     } catch (err) {
       console.error('Erro inesperado durante o login:', err);
-      
+
       // tratamento de erro específico por tipo de login
       if (loginType === 'suap') {
         setError({

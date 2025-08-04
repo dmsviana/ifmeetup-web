@@ -32,8 +32,17 @@ const usePermissions = () => {
     hasAdminAccess: () => hasPermission('ADMIN_ACCESS')
   };
 
+  // permissões relacionadas a eventos
+  const eventPermissions = {
+    canApproveEvents: () => hasPermission('EVENT_APPROVE') || hasPermission('ADMIN_ACCESS'),
+    canRejectEvents: () => hasPermission('EVENT_REJECT') || hasPermission('ADMIN_ACCESS'),
+    canViewPendingEvents: () => hasPermission('EVENT_APPROVE') || hasPermission('EVENT_REJECT') || hasPermission('ADMIN_ACCESS'),
+    canManageEvents: () => hasPermission('EVENT_MANAGE') || hasPermission('ADMIN_ACCESS')
+  };
+
   return {
     ...roomPermissions,
+    ...eventPermissions,
     user,
     // funções base do contexto
     hasPermission,

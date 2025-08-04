@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { AppLayout } from './components/layout';
 import { ProtectedRoute } from './auth/components';
 import {
+  HomePage,
   RoomsPage,
   RoomDetailsPage,
   NewRoomPage,
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="/rooms" replace />
+        element: <Navigate to="/home" replace />
+      },
+      {
+        path: 'home',
+        element: <HomePage />
       },
       {
         path: 'rooms',

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Input, Button, Card } from '../../components/ui';
 import { SuapLoginSchema } from '../../schemas';
-import { SuapStatusIndicator } from '../../components/auth';
 
 const SuapLoginForm = ({ onSubmit, isLoading, error, initialData, onDataChange }) => {
   const [formData, setFormData] = useState({
