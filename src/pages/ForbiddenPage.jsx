@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Button, Card } from '../components/ui';
-import { useAuth } from '../auth';
+import { Button, Card } from '../shared/components/ui';
+import { useAuth } from '../features/auth';
 
 const ForbiddenPage = () => {
   const { user, logout } = useAuth();

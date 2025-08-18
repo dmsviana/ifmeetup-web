@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { PageContainer } from '../components/layout';
-import { Button } from '../components/ui';
-import { RoomList, FilterPanel, RoomFormModal } from '../components/room';
-import { useRoomFilters, useRoomList } from '../hooks';
-import { usePermissions } from '../auth';
+import { PageContainer } from '../shared/components/layout';
+import { Button } from '../shared/components/ui';
+import { RoomList, FilterPanel, RoomFormModal } from '../features/rooms/components';
+import { useRoomFilters, useRoomList } from '../features/rooms/hooks';
+import { usePermissions } from '../features/auth/hooks';
 
 const RoomsPage = () => {
   const { canCreateRooms } = usePermissions();

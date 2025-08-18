@@ -8,9 +8,9 @@ import {
   Select, 
   Modal,
   Pagination 
-} from './components/ui';
-import { RoomService } from './services';
-import { ROOM_TYPES, ROOM_STATUSES, RESOURCE_TYPES, validateRoom } from './schemas';
+} from './shared/components/ui';
+import { RoomService } from './features/rooms/services';
+import { ROOM_TYPES, ROOM_STATUSES, RESOURCE_TYPES, validateRoom } from './shared/constants';
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { PageContainer } from '../components/layout';
-import { Button, Card } from '../components/ui';
+import { PageContainer } from '../shared/components/layout';
+import { Button, Card } from '../shared/components/ui';
 
 const NotFoundPage = () => {
   return (
