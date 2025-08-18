@@ -1,5 +1,5 @@
-import { PageContainer } from '../components/layout';
-import { Card } from '../components/ui';
+import { PageContainer } from '../shared/components/layout';
+import { Card } from '../shared/components/ui';
 
 const AvailabilityPage = () => {
   return (

@@ -35,3 +35,10 @@ documentation/
 # Ignore markdown files
 *.md
 
+#
+.kiro/
+.documentation/
+.cursor/
+
+
+

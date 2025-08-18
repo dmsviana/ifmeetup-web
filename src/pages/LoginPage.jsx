@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { LoginForm, SuapLoginForm } from '../auth/components';
-import { LoginToggle } from '../components/auth';
-import { AuthLayout } from '../components/layout';
-import { AuthLeftPanel, AuthRightPanel } from '../components/auth';
-import { useAuth } from '../auth';
+import { LoginForm, SuapLoginForm } from '../features/auth/components';
+import { LoginToggle } from '../shared/components/feedback';
+import { AuthLayout } from '../shared/components/layout';
+import { AuthLeftPanel, AuthRightPanel } from '../shared/components/feedback';
+import { useAuth } from '../features/auth';
 
 const LoginPage = () => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PageContainer } from '../components/layout';
-import { Card, Button } from '../components/ui';
-import { RoomFormModal } from '../components/room';
+import { PageContainer } from '../shared/components/layout';
+import { Card, Button } from '../shared/components/ui';
+import { RoomFormModal } from '../features/rooms/components';
 
 const NewRoomPage = () => {
   const navigate = useNavigate();

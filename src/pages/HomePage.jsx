@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { useAuth } from '../auth';
-import usePermissions from '../auth/hooks/usePermissions';
-import useDashboardStats from '../hooks/useDashboardStats';
-import { StatsGrid, EventsGrid, CreateEventModal, PendingEventsSection } from '../components/dashboard';
-import PageHeader from '../components/layout/PageHeader';
+import { useAuth } from '../features/auth';
+import { usePermissions } from '../features/auth/hooks';
+import { useDashboardStats } from '../features/dashboard/hooks';
+import { StatsGrid, EventsGrid, CreateEventModal, PendingEventsSection } from '../features/dashboard/components';
+import { PageHeader } from '../shared/components/layout';
 import { Filter, Plus, AlertTriangle } from 'lucide-react';
 
 /**

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { PageContainer } from '../components/layout';
-import { Card, Button, LoadingSpinner } from '../components/ui';
-import { RoomFormModal } from '../components/room';
-import { RoomService } from '../services';
+import { PageContainer } from '../shared/components/layout';
+import { Card, Button, LoadingSpinner } from '../shared/components/ui';
+import { RoomFormModal } from '../features/rooms/components';
+import { RoomService } from '../features/rooms/services';
 
 const EditRoomPage = () => {
   const { id } = useParams();
